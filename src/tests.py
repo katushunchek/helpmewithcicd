@@ -1,5 +1,10 @@
 import unittest
-import srs.app as tested_app
+# src/tests.py
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+
+import app as tested_app
 import json
 
 class FlaskAppTests(unittest.TestCase):
