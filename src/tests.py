@@ -65,9 +65,10 @@ class FlaskAppTests(unittest.TestCase):
         self.assertEqual(r.data, b'5.0')
 
     def test_mul_success(self):
-        r = self.app.get('/mul?a=2&b=11')
+        r = self.app.get('/mul?a=4&b=5')
         self.assertEqual(r.status_code, 200)
-        self.assertEqual(r.data, b'22.0')
+        self.assertEqual(r.data, b'20.0')
+        
         
 if __name__ == '__main__':
     unittest.main()
