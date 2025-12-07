@@ -25,6 +25,16 @@ def add():
         return 'a и b - НЕ числа'
     return str(a + b)
 
+@app.route('/mul', methods=['GET'])
+def mul():
+    try:
+        a = float(request.args.get('a'))
+        b = float(request.args.get('b'))
+    except (TypeError, ValueError):
+        return 'error', 400
+
+    return str(a * b)
+
 
 @app.route('/api', methods=['GET', 'POST'])
 def api():
